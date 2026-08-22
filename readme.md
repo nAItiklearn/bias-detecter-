@@ -56,7 +56,7 @@ python app.py
 Open http://127.0.0.1:5000 in your browser.
 
 ## folder structure
-
+```
 bias-detector/
 │
 ├── app.py
@@ -70,6 +70,7 @@ bias-detector/
 └── static/
     ├── style.css
     └── script.js
+```
 
 #  Ai usage
 I used ai to make the script.js file as I dont know js much 
