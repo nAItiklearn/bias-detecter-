@@ -12,15 +12,15 @@ us-vs-them framing
 # HOW DOES IT WORKS BRO?
 - Paste a headline, paragraph, article, or social media post.
 
-![text box](webimage1.png)
+![text box](webimage3.png)
 
 -click analyze text and wait for some seconds .
 
-![preview analysis](webimage2.png)
+![preview analysis](webimage1.png)
 
 -boom you have the analysis , clean simple
 
-![full analysis breakdown](webimage3.png)
+![full analysis breakdown](webimage2.png)
 
 # TECH STACK
 
@@ -49,6 +49,7 @@ bias-detector/
 ├── app.py
 ├── analyzer.py
 ├── requirements.txt
+├── readme.md
 │
 ├── data/
 │   └── word_lists.json
@@ -58,5 +59,5 @@ bias-detector/
 │
 └── static/
     ├── style.css
-    └── script.
+    └── script
 
