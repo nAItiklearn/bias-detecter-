@@ -34,13 +34,9 @@ CSS
 JavaScript
 
 ## data/NLP
- pandas
- numpy
  re - text cleaning
  collections-word frequency
 
-## visualization
- matplotlib(generate charts)
 
 
 # FOLDER STRUCTURE
@@ -50,14 +46,14 @@ bias-detector/
 ├── analyzer.py
 ├── requirements.txt
 ├── readme.md
-│
-├── data/
-│   └── word_lists.json
-│
 ├── templates/
 │   └── index.html
 │
 └── static/
     ├── style.css
-    └── script
+    └── script.js
 
+#  Ai usage
+I used ai to make the script.js file as I dont know js much 
+I used ai to take help in css file (sizing) 
+nlp logic and rest file are made by me(I used docs and yt tutorial for learning any part)
