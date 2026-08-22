@@ -1,10 +1,8 @@
 # BIAS DETECTER- "Are you being manupulated?"
 
+## click here to try yourself- 
+
 Ive build a webpage where someone pasted a news headline or paragraph, and my logic detects things like - 
-
-
-It checks things like:
-
 -Emotional and loaded words
 -Sensational language
 -Absolute statements
@@ -14,8 +12,6 @@ It checks things like:
 -Capitalization and punctuation patterns
 
 It then combines these signals into a Potential Bias Score. The score is only an indicator  it doesn't decide whether something is objectively biased or true.
-
-## click here to try yourself- 
 
 # HOW DOES IT WORKS BRO?
 - Paste a headline, paragraph, article, or social media post.
