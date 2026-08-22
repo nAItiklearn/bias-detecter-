@@ -47,6 +47,7 @@ Clone the repository and install the required libraries:
 
 ```bash
 pip install -r requirements.txt
+```
 
 Then start the app:
 
@@ -54,10 +55,8 @@ python app.py
 
 Open http://127.0.0.1:5000 in your browser.
 
+## folder structure
 
-## Folder Structure
-
-```text
 bias-detector/
 │
 ├── app.py
@@ -71,7 +70,6 @@ bias-detector/
 └── static/
     ├── style.css
     └── script.js
-```
 
 #  Ai usage
 I used ai to make the script.js file as I dont know js much 
