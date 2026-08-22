@@ -1,0 +1,494 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta name="description" content="Bias Detector - Analyze language for potential bias, emotional framing, and sensationalism.">
+        <title> BIAS DETETCTOR</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+        >
+    </head>
+    <body>
+        <!-- HEADER-->
+         <header class="navbar">
+            <div class="logo">
+                BIAS<span>//</span>DETECTOR
+            </div>
+            <nav>
+                <a href="#analyzer">Analyzer</a>
+                <a href="#about">About</a>
+            </nav>
+         </header>
+
+         <!-- MAIN-->
+          <main>
+
+            <!--   HERO  -->
+               <section class="hero">
+                <p class="eyebrow">
+                LANGUAGE ANALYSIS TOOL
+            </p>
+
+            <h1>
+                Analyze the language.<br>
+                <span>Question the framing.</span>
+            </h1>
+
+            <p class="hero-description">
+                Detect potential emotional, sensational, and manipulative
+                language in headlines, articles, and social media posts.
+            </p>
+
+        </section>
+
+
+        <!-- ================= ANALYZER ================= -->
+
+        <section id="analyzer" class="analyzer-section">
+
+            <div class="input-header">
+
+                <div>
+                    <h2>Analyze text</h2>
+
+                    <p>
+                        Paste a headline, paragraph, article, or social media post.
+                    </p>
+                </div>
+
+                <span id="word-count">
+                    0 words
+                </span>
+
+            </div>
+
+
+            <div class="text-box">
+
+                <textarea
+                    id="text-input"
+                    name="text"
+                    placeholder="Paste your text here..."
+                    maxlength="5000"
+                ></textarea>
+
+                <div class="text-box-footer">
+
+                    <span>
+                        Maximum 5,000 characters
+                    </span>
+
+                    <button
+                        id="clear-button"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="analyze-button"
+                class="analyze-button"
+                type="button"
+            >
+                <span>Analyze Text</span>
+                <span class="arrow">→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <section
+            id="results"
+            class="results-section"
+            hidden
+        >
+
+            <div class="section-label">
+                ANALYSIS RESULTS
+            </div>
+
+
+            <!-- Bias Score -->
+
+            <div class="score-card">
+
+                <div class="score-info">
+
+                    <p class="result-label">
+                        POTENTIAL BIAS
+                    </p>
+
+                    <div class="score">
+                        <span id="bias-score">25</span>
+                        <span class="score-max">/100</span>
+                    </div>
+
+                    <p
+                        id="bias-level"
+                        class="bias-level"
+                    >
+                        MODERATE
+                    </p>
+
+                </div>
+
+
+                <div class="score-circle">
+
+                    <div class="score-circle-inner">
+                        <span id="score-circle-value">25</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bias Signals -->
+
+            <div class="signals-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="result-label">
+                            BIAS SIGNALS
+                        </p>
+
+                        <h2>
+                            What was detected?
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="signal-list">
+
+                    <!-- Emotional -->
+
+                    <div class="signal">
+
+                        <div class="signal-top">
+
+                            <span>
+                                Emotional language
+                            </span>
+
+                            <span id="emotional-count">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="emotional-bar"
+                                class="progress-fill"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sensational -->
+
+                    <div class="signal">
+
+                        <div class="signal-top">
+
+                            <span>
+                                Sensationalism
+                            </span>
+
+                            <span id="sensational-count">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="sensational-bar"
+                                class="progress-fill"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Absolute -->
+
+                    <div class="signal">
+
+                        <div class="signal-top">
+
+                            <span>
+                                Absolute language
+                            </span>
+
+                            <span id="absolute-count">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="absolute-bar"
+                                class="progress-fill"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Loaded -->
+
+                    <div class="signal">
+
+                        <div class="signal-top">
+
+                            <span>
+                                Loaded language
+                            </span>
+
+                            <span id="loaded-count">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="loaded-bar"
+                                class="progress-fill"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Urgency -->
+
+                    <div class="signal">
+
+                        <div class="signal-top">
+
+                            <span>
+                                Urgency / pressure
+                            </span>
+
+                            <span id="urgency-count">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="urgency-bar"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Detected Words -->
+
+            <div class="detected-card">
+
+                <p class="result-label">
+                    DETECTED SIGNALS
+                </p>
+
+                <h2>
+                    Words & phrases worth examining
+                </h2>
+
+                <div
+                    id="detected-words"
+                    class="word-tags"
+                >
+
+                    <!-- JavaScript will add tags here -->
+
+                </div>
+
+            </div>
+
+
+            <!-- Sentiment -->
+
+            <div class="sentiment-card">
+
+                <div>
+
+                    <p class="result-label">
+                        SENTIMENT
+                    </p>
+
+                    <h2>
+                        Emotional tone
+                    </h2>
+
+                </div>
+
+
+                <div class="sentiment-values">
+
+                    <div>
+                        <span>Positive</span>
+                        <strong id="positive-score">
+                            0.00
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Neutral</span>
+                        <strong id="neutral-score">
+                            0.00
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Negative</span>
+                        <strong id="negative-score">
+                            0.00
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Emotions -->
+
+            <div class="emotions-card">
+
+                <p class="result-label">
+                    EMOTION ANALYSIS
+                </p>
+
+                <h2>
+                    Emotional signals
+                </h2>
+
+
+                <div class="emotion-grid">
+
+                    <div class="emotion">
+                        <span>Anger</span>
+                        <strong id="anger">0</strong>
+                    </div>
+
+                    <div class="emotion">
+                        <span>Fear</span>
+                        <strong id="fear">0</strong>
+                    </div>
+
+                    <div class="emotion">
+                        <span>Surprise</span>
+                        <strong id="surprise">0</strong>
+                    </div>
+
+                    <div class="emotion">
+                        <span>Sadness</span>
+                        <strong id="sadness">0</strong>
+                    </div>
+
+                    <div class="emotion">
+                        <span>Joy</span>
+                        <strong id="joy">0</strong>
+                    </div>
+
+                    <div class="emotion">
+                        <span>Disgust</span>
+                        <strong id="disgust">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Disclaimer -->
+
+            <div class="disclaimer">
+
+                <strong>
+                    Important:
+                </strong>
+
+                This tool detects linguistic signals that may be
+                associated with bias. It does not determine whether
+                a statement is objectively true, false, or biased.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            id="about"
+            class="about-section"
+        >
+
+            <p class="eyebrow">
+                ABOUT THE PROJECT
+            </p>
+
+            <h2>
+                Analyze the language,<br>
+                not the opinion.
+            </h2>
+
+            <p>
+                Bias Detector looks for linguistic patterns such as
+                emotional wording, sensationalism, absolute claims,
+                loaded language, and manipulative phrasing.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="logo">
+            BIAS<span>//</span>DETECTOR
+        </div>
+
+        <p>
+            Built with Python & NLP  for macondo HACKCLUB
+             </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

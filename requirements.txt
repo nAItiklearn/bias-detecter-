@@ -1,0 +1,5 @@
+Flask 
+vaderSentiment
+NRCLex
+nltk
+gunicorn
