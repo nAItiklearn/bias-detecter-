@@ -41,9 +41,20 @@ JavaScript
  re - text cleaning
  collections-word frequency
 
+## Running Locally
+
+Clone the repository and install the required libraries:
+
+```bash
+pip install -r requirements.txt
+
+Then start the app:
+
+python app.py
+
+Open http://127.0.0.1:5000 in your browser.
 
 
-# FOLDER STRUCTURE
 ## Folder Structure
 
 ```text
