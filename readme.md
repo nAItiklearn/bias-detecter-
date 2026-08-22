@@ -1,6 +1,6 @@
 # BIAS DETECTER- "Are you being manupulated?"
 
-## click here to try yourself- 
+## click here to try yourself- https://bias-detecter.onrender.com/
 
 Ive build a webpage where someone pasted a news headline or paragraph, and my logic detects things like - 
 -Emotional and loaded words
