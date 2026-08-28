@@ -38,13 +38,12 @@ CSS
 JavaScript
 
 ## data/NLP
- re - text cleaning
- collections-word frequency
+re - text cleaning
+collections-word frequency
 
 ## Running Locally
 
 Clone the repository and install the required libraries:
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -55,24 +54,8 @@ python app.py
 
 Open http://127.0.0.1:5000 in your browser.
 
-## folder structure
-```
-bias-detector/
-│
-├── app.py
-├── analyzer.py
-├── requirements.txt
-├── README.md
-│
-├── templates/
-│   └── index.html
-│
-└── static/
-    ├── style.css
-    └── script.js
-```
+# AI usage
 
-#  Ai usage
-I used ai to make the script.js file as I dont know js much 
-I used ai to take help in css file (sizing) 
+I used AI to get help with the CSS file, and I used GitHub Copilot to check my code for errors and debugging.
+
 nlp logic and rest file are made by me(I used docs and yt tutorial for learning any part)
